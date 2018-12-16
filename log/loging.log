@@ -1,0 +1,34 @@
+2018-12-11 === [main] === INFO  === com.zgm.quartz.QuartzApplication ==== Starting QuartzApplication on zgm with PID 10588 (H:\workspace\quartz\target\classes started by Administrator in H:\workspace\quartz)
+2018-12-11 === [main] === INFO  === com.zgm.quartz.QuartzApplication ==== The following profiles are active: dev
+2018-12-11 === [main] === WARN  === org.mybatis.spring.mapper.ClassPathMapperScanner ==== No MyBatis mapper was found in '[com.zgm.quartz]' package. Please check your configuration.
+2018-12-11 === [main] === INFO  === o.s.boot.web.embedded.tomcat.TomcatWebServer ==== Tomcat initialized with port(s): 8888 (http)
+2018-12-11 === [main] === INFO  === org.apache.catalina.core.StandardService ==== Starting service [Tomcat]
+2018-12-11 === [main] === INFO  === org.apache.catalina.core.StandardEngine ==== Starting Servlet Engine: Apache Tomcat/9.0.13
+2018-12-11 === [main] === INFO  === org.apache.catalina.core.AprLifecycleListener ==== The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.8.0_191\jre\bin;D:/java/bin/server;D:/java/bin;D:/java/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\mysql-5.7.23-winx64\bin;D:\nodejs\;D:\Git\cmd;D:\svn\bin;C:\Users\Administrator\AppData\Roaming\npm;D:\sts-bundle\sts-3.9.6.RELEASE;;.]
+2018-12-11 === [main] === INFO  === o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] ==== Initializing Spring embedded WebApplicationContext
+2018-12-11 === [main] === INFO  === org.springframework.web.context.ContextLoader ==== Root WebApplicationContext: initialization completed in 855 ms
+2018-12-11 === [main] === INFO  === c.a.d.s.b.a.DruidDataSourceAutoConfigure ==== Init DruidDataSource
+2018-12-11 === [main] === WARN  === o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext ==== Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jobController': Unsatisfied dependency expressed through field 'jobService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jobService': Unsatisfied dependency expressed through field 'scheduler'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'quartzDataSourceInitializer' defined in class path resource [org/springframework/boot/autoconfigure/quartz/QuartzAutoConfiguration$JdbcStoreTypeConfiguration.class]: Unsatisfied dependency expressed through method 'quartzDataSourceInitializer' parameter 0; nested exception is org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'dataSource': Could not bind properties to 'DruidDataSourceWrapper' : prefix=spring.datasource.druid, ignoreInvalidFields=false, ignoreUnknownFields=true; nested exception is org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under 'spring.datasource.druid' to javax.sql.DataSource
+2018-12-11 === [main] === INFO  === org.apache.catalina.core.StandardService ==== Stopping service [Tomcat]
+2018-12-11 === [main] === INFO  === o.s.b.a.l.ConditionEvaluationReportLoggingListener ==== 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-12-11 === [main] === ERROR === o.s.b.diagnostics.LoggingFailureAnalysisReporter ==== 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.druid' to javax.sql.DataSource:
+
+    Property: spring.datasource.druid.filters
+    Value: stat,wall,log4j
+    Origin: class path resource [application.yml]:32:16
+    Reason: org.apache.log4j.Logger
+
+Action:
+
+Update your application's configuration
+
