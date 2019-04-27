@@ -1,9 +1,13 @@
 package com.zgm.quartz;
 
+import java.util.List;
 import java.util.Properties;
 
+import com.zgm.quartz.entity.Job;
+import com.zgm.quartz.mapper.JobMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -17,6 +21,21 @@ import oshi.util.Util;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class QuartzApplicationTests {
+	@Autowired
+	private JobMapper mapper;
+
+	@Test
+	public void test() {
+//		List<Job> jobs = mapper.selectAll();
+//		jobs.forEach(j->{
+//			System.out.println("----------------"+j.getJobName());
+//		});
+//		int i = mapper.updateStatusById(1L, 1);
+//		System.out.println("==============="+i);
+		Job job = mapper.selectById(1L);
+		System.out.println(job.getJobName());
+
+	}
 
 	@Test
 	public void contextLoads() {
